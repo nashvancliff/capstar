@@ -1,0 +1,536 @@
+:root {
+    --bg-color: #f7f7f7;
+    --text-main: #000;
+    --text-muted: #999;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --font-cursive: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+    /* Dotted grid background matching the image */
+    background-image: radial-gradient(#d5d5d5 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center;
+}
+
+/* Watermark Text */
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16vw;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    z-index: -1;
+    pointer-events: none;
+    white-space: nowrap;
+    letter-spacing: -2px;
+}
+
+/* Right side scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    z-index: 10;
+}
+.scroll-line {
+    width: 2px;
+    height: 60px;
+    background-color: #000;
+    border-radius: 1px;
+}
+.scroll-indicator span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: var(--text-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* Shared utility classes */
+.mono-text {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.label {
+    color: var(--text-muted);
+}
+.label.dark {
+    color: #666;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 60px;
+    position: relative;
+    z-index: 10;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.logo {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo h1 {
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+.logo .cursive-text {
+    font-family: var(--font-cursive);
+    font-size: 18px;
+    font-style: italic;
+    color: #444;
+    margin-top: 2px;
+}
+
+.header-right {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+.header-right nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.header-right nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+.header-right nav a:hover {
+    color: var(--text-muted);
+}
+
+/* Main Content Grid */
+main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 300px minmax(auto, 600px) 300px;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 60px;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 5;
+}
+
+/* Left Column */
+.left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.left-col .title {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+.left-col .desc {
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.info-block .value {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Center Column */
+.center-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 40px;
+    background: transparent;
+}
+/* Blueprint corner brackets */
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+.top-left { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.top-right { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+.bottom-right { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+.image-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #efefef; /* Light grey backdrop for product */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.image-inner img {
+    width: 110%; /* Makes the cap appear slightly larger than container bounds */
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Helps blend white background of image if any */
+}
+
+/* Right Column */
+.right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.buy-box {
+    background: #000;
+    color: #fff;
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.buy-box h3 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin: 5px 0;
+}
+.buy-box button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    padding: 14px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.buy-box button:hover {
+    background: #fff;
+    color: #000;
+}
+
+.log-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 5px;
+}
+.log-text {
+    color: #777;
+    line-height: 1.8;
+    text-transform: none; /* Override mono-text if needed, but looks uppercase in design */
+}
+.status-dots {
+    display: flex;
+    gap: 6px;
+    margin-top: 5px;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+.dot.active {
+    background: #000;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    z-index: 10;
+}
+.footer-left, .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.footer-right {
+    text-align: right;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    border: 1px solid #000;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+.modal-title {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+}
+
+.modal-content .desc {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+#email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#email-input {
+    padding: 12px;
+    border: 1px solid #000;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    outline: none;
+}
+
+.modal-submit {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 14px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+.modal-submit:hover {
+    background: #fff;
+    color: #000;
+}
+
+#form-msg {
+    margin-top: 15px;
+    font-size: 11px;
+    color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px 20px;
+    }
+    .left-col {
+        order: 1;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .center-col {
+        order: 2;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .right-col {
+        order: 3;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .info-group {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+    .scroll-indicator {
+        display: none;
+    }
+    .watermark {
+        font-size: 20vw;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 20px;
+    }
+    /* Hide extra texts to keep header clean and focus on Logo */
+    .header-left, .header-right .label {
+        display: none; 
+    }
+    .header-right {
+        align-items: center;
+        width: 100%;
+    }
+    .header-right nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .logo img {
+        max-height: 60px !important;
+    }
+    main {
+        padding: 10px 15px 40px 15px;
+        gap: 35px;
+    }
+    .left-col .title {
+        font-size: 42px;
+        line-height: 1;
+    }
+    .left-col .desc {
+        font-size: 11px;
+    }
+    .image-container {
+        padding: 20px;
+    }
+    .buy-box {
+        padding: 25px 20px;
+    }
+    .log-box {
+        padding-left: 0;
+        text-align: center;
+    }
+    .status-dots {
+        justify-content: center;
+    }
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 15px;
+    }
+    .footer-left, .footer-right {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-col .title {
+        font-size: 34px;
+    }
+    .info-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .buy-box h3 {
+        font-size: 28px;
+    }
+    .modal-content {
+        padding: 30px 20px;
+    }
+    .modal-title {
+        font-size: 22px;
+    }
+    .watermark {
+        font-size: 25vw;
+        top: 40%;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPSTAR - Premium Atelier</title>
+    <!-- SECURITY CHECK -->
+    <script>
+        if (sessionStorage.getItem('storeAccess') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@1,400;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="watermark">SPECIMEN</div>
+
+<div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="mono-text">SCROLL_DEPTH_01</span>
+</div>
+
+<header>
+    <div class="header-left">
+        <span class="mono-text label">ARCHIVE_V01_01</span>
+    </div>
+
+    <div class="logo">
+        <img src="logo.png" alt="CAPSTAR Logo" style="max-height: 80px; width: auto; margin-bottom: 5px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Fallback text if image fails to load -->
+        <h1 style="display: none; font-size: 46px; font-weight: 900; letter-spacing: -2px; margin: 0;">CAPST★R</h1>
+        <span class="cursive-text">Premium atelier</span>
+    </div>
+
+    <div class="header-right">
+        <span class="mono-text label">INDEX_DIRECTORY</span>
+        <nav>
+            <a href="#">COLLECTIONS</a>
+            <a href="#">LAB_REPORTS</a>
+            <a href="#">CART [0]</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="left-col">
+        <h2 class="title">AIRPORT<br>SECURITY</h2>
+        
+        <p class="mono-text desc">
+            PREMIUM TRUCKER CONSTRUCTION.<br>
+            HIGH-DENSITY 3D EMBROIDERY.<br>
+            REINFORCED MESH VENTILATION.<br>
+            INDUSTRIAL GRADE TEXTILE.
+        </p>
+
+        <div class="info-group">
+            <div class="info-block">
+                <span class="mono-text label">SERIAL_NO:</span>
+                <span class="mono-text value">ABAG-DROP-001-BLK</span>
+            </div>
+            
+            <div class="info-block">
+                <span class="mono-text label">AVAILABILITY:</span>
+                <span id="dynamic-availability" class="mono-text value">LIMITED_RESERVE</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="center-col">
+        <div class="image-container">
+            <div class="corner top-left"></div>
+            <div class="corner top-right"></div>
+            <div class="corner bottom-left"></div>
+            <div class="corner bottom-right"></div>
+            
+            <div class="image-inner">
+                <!-- Using a placeholder for the cap, since the user has 'gorra.png' locally -->
+                <img src="gorra.png" alt="CAPSTAR Cap" onerror="this.src='https://via.placeholder.com/400x300?text=GORRA.PNG'">
+            </div>
+        </div>
+        <div class="image-caption mono-text label">PHASE: STABILIZED / MAG: 1.0X</div>
+    </section>
+
+    <section class="right-col">
+        <div class="buy-box">
+            <span class="mono-text label dark">PURCHASE_PROTOCOL</span>
+            <h3 id="dynamic-price">$120.000</h3>
+            <button id="btn-avisarme">AVISARME</button>
+        </div>
+
+        <div class="log-box">
+            <span class="mono-text label">[SYSTEM_LOG]</span>
+            <div class="log-text mono-text">
+                > INITIALIZING SPECIMEN ANALYSIS...<br>
+                > FABRIC DENSITY: OPTIMAL<br>
+                > STITCH COUNT: 14,400<br>
+                > ORIGIN: DESIGNATED LAB_01<br>
+                > STATUS: AUTHENTICATED
+            </div>
+            <div class="status-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-left">
+        <span class="mono-text label">LOCAL_TIME</span><br>
+        <span class="mono-text label">06:01:14 UTC</span>
+    </div>
+    
+    <div class="footer-right">
+        <span class="mono-text label">LEGAL_CLEARANCE</span><br>
+        <span class="mono-text label">©2024 ALL RIGHTS RESERVED</span>
+    </div>
+</footer>
+
+<!-- Popup Modal -->
+<div class="modal-overlay" id="email-modal">
+    <div class="modal-content">
+        <button class="close-btn" id="close-modal">&times;</button>
+        <h3 class="modal-title">INICIAR PROTOCOLO</h3>
+        <p class="mono-text desc">Ingresa tu correo para recibir acceso prioritario cuando el especimen esté disponible.</p>
+        <form id="email-form">
+            <input type="email" id="email-input" placeholder="INGRESA_TU_EMAIL@..." required>
+            <button type="submit" class="modal-submit">SUSCRIBIRME</button>
+        </form>
+        <div id="form-msg" class="mono-text"></div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
