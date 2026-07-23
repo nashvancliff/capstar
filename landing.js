@@ -48,28 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
         cdSecs.textContent = String(seconds).padStart(2, '0');
     }, 1000);
 
-    // Email Submit (Conectado a Formspree)
+    // Email Submit (Conectado a Google Sheets)
     emailForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const email = emailInput.value.trim();
         if (!email) return;
 
-        // Reemplaza YOUR_FORMSPREE_ID con el código que te dé Formspree (ej. /f/xqywaabb)
-        fetch('https://formspree.io/f/mgogaeaj', {
+        const GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzCut0sHR265AYQ4QlLvPHPtlPg3hOuetg3_OQgjlJo0ifTEQuGJP_Vihg6LuzXuPdmRA/exec';
+
+        fetch(GOOGLE_URL, {
             method: 'POST',
-            headers: { 
-                'Accept': 'application/json',
-                'Content-Type': 'application/json' 
-            },
+            mode: 'no-cors', // Evita errores de seguridad en navegadores
             body: JSON.stringify({ email: email })
         })
-        .then(res => {
-            if (res.ok) {
-                emailForm.style.display = 'none';
-                successMsg.style.display = 'block';
-            } else {
-                alert('Hubo un error al registrar el correo. Intenta de nuevo.');
-            }
+        .then(() => {
+            // Como usamos no-cors, asumimos que se envió correctamente
+            emailForm.style.display = 'none';
+            successMsg.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un error al registrar el correo. Intenta de nuevo.');
         });
     });
 
