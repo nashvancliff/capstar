@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // FECHA DEL DROP: Cambia esto por la fecha real de tu lanzamiento. Formato (Año-Mes-DiaTHora:Minuto:Segundo)
-    const targetDate = new Date("2026-08-07T19:00:00").getTime(); 
+    const targetDate = new Date("2026-08-14T19:00:00").getTime(); 
 
     // CONTRASEÑA DE LA TIENDA: Cambia esto por la clave que tú quieras
     const STORE_PASSWORD = 'Capstar1029';
