@@ -9,14 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email-input');
     const formMsg = document.getElementById('form-msg');
 
-    // Fetch Dynamic Content
-    fetch('/api/config')
-        .then(res => res.json())
-        .then(data => {
-            if (data.price && priceEl) priceEl.textContent = data.price;
-            if (data.availability && availabilityEl) availabilityEl.textContent = data.availability;
-        })
-        .catch(err => console.error('Error fetching config:', err));
+    // Remove fetch to api/config since it's static now
 
     // Modal Logic
     if (btnAvisarme) {
@@ -60,26 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (!email) return;
 
-            fetch('/api/subscribe', {
+            const GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzCut0sHR265AYQ4QlLvPHPtlPg3hOuetg3_OQgjlJo0ifTEQuGJP_Vihg6LuzXuPdmRA/exec';
+
+            fetch(GOOGLE_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                mode: 'no-cors',
                 body: JSON.stringify({ email })
             })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    formMsg.style.color = '#3b82f6'; // Match tech theme but clearly successful
-                    formMsg.textContent = '> PROTOCOLO ACEPTADO. REGISTRO EXITOSO.';
-                    emailInput.value = '';
-                    setTimeout(() => {
-                        modal.classList.remove('active');
-                    }, 2000);
-                } else {
-                    formMsg.style.color = 'red';
-                    formMsg.textContent = '> ERROR DEL SISTEMA. INTENTA DE NUEVO.';
-                }
+            .then(() => {
+                formMsg.style.color = '#3b82f6'; 
+                formMsg.textContent = 'Ya quedaste registrado. Prepárate.';
+                emailInput.value = '';
+                setTimeout(() => {
+                    modal.classList.remove('active');
+                }, 2000);
             })
             .catch(err => {
                 formMsg.style.color = 'red';
