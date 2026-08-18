@@ -45,21 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Form Submission
-    if (emailForm) {
-        emailForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = emailInput.value.trim();
-            
-            if (!email) return;
+        if (emailForm) {
+            emailForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const prefixEl = document.getElementById('store-prefix');
+                const prefix = prefixEl ? prefixEl.value : '';
+                const phone = emailInput.value.trim();
+                
+                if (!phone) return;
+                
+                const fullPhone = prefix + ' ' + phone;
 
-            const GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzCut0sHR265AYQ4QlLvPHPtlPg3hOuetg3_OQgjlJo0ifTEQuGJP_Vihg6LuzXuPdmRA/exec';
+                const GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzCut0sHR265AYQ4QlLvPHPtlPg3hOuetg3_OQgjlJo0ifTEQuGJP_Vihg6LuzXuPdmRA/exec';
 
-            fetch(GOOGLE_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify({ email })
-            })
+                fetch(GOOGLE_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify({ email: fullPhone })
+                })
             .then(() => {
                 formMsg.style.color = '#3b82f6'; 
                 formMsg.textContent = 'Ya quedaste registrado. Prepárate.';

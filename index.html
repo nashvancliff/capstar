@@ -190,7 +190,19 @@
     <h3>ENTRA AL CLUB</h3>
     <p>Acceso anticipado, drops exclusivos y sorpresas antes que todos.</p>
     <form id="landing-email-form">
-        <input type="tel" id="landing-email" placeholder="INGRESA_TU_NÚMERO..." required>
+        <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+            <select id="landing-prefix" style="padding: 12px; border: 1px solid #000; font-family: var(--font-mono); outline: none; background: #fff;">
+                <option value="+1">+1 (US)</option>
+                <option value="+34">+34 (ES)</option>
+                <option value="+51">+51 (PE)</option>
+                <option value="+52" selected>+52 (MX)</option>
+                <option value="+54">+54 (AR)</option>
+                <option value="+56">+56 (CL)</option>
+                <option value="+57">+57 (CO)</option>
+                <option value="+58">+58 (VE)</option>
+            </select>
+            <input type="tel" id="landing-email" placeholder="NÚMERO..." required style="margin-bottom: 0; width: 100%;">
+        </div>
         <button type="submit">AVISARME</button>
     </form>
     <div class="success-msg" id="landing-success-msg">Ya quedaste registrado. Prepárate.</div>

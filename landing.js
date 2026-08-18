@@ -51,15 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Email Submit (Conectado a Google Sheets)
     emailForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = emailInput.value.trim();
-        if (!email) return;
+        const prefix = document.getElementById('landing-prefix').value;
+        const phone = emailInput.value.trim();
+        if (!phone) return;
+        
+        const fullPhone = prefix + ' ' + phone;
 
         const GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzCut0sHR265AYQ4QlLvPHPtlPg3hOuetg3_OQgjlJo0ifTEQuGJP_Vihg6LuzXuPdmRA/exec';
 
         fetch(GOOGLE_URL, {
             method: 'POST',
             mode: 'no-cors', // Evita errores de seguridad en navegadores
-            body: JSON.stringify({ email: email })
+            body: JSON.stringify({ email: fullPhone })
         })
         .then(() => {
             // Como usamos no-cors, asumimos que se envió correctamente
