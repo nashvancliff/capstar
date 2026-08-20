@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (!phone) return;
                 
-                const fullPhone = prefix + ' ' + phone;
+                // El apóstrofe inicial (') evita que Google Sheets interprete el "+" como una fórmula matemática
+                const fullPhone = "'" + prefix + ' ' + phone;
 
                 const GOOGLE_URL = 'https://script.google.com/macros/s/AKfycbzCut0sHR265AYQ4QlLvPHPtlPg3hOuetg3_OQgjlJo0ifTEQuGJP_Vihg6LuzXuPdmRA/exec';
 
