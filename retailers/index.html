@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPSTAR — DOSSIER MAYORISTAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Script to trigger staggered animations on scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+<body>
+    <!-- Heavy Industrial Textures -->
+    <div class="texture-layer dust-layer"></div>
+    <div class="texture-layer cement-layer"></div>
+    <div class="texture-layer noise-layer"></div>
+    <div class="scan-line-global"></div>
+    
+    <div class="main-wrapper reveal fade-up">
+        <div class="industrial-corner tl"></div>
+        <div class="industrial-corner tr"></div>
+        <div class="industrial-corner bl"></div>
+        <div class="industrial-corner br"></div>
+
+        <nav class="top-bar border-bottom">
+            <div class="grid-cell border-right flex-center">
+                <span class="tech-badge mono-meta">SYS_2026 // DROP_002</span>
+            </div>
+            <div class="grid-cell border-right text-center flex-center">
+                <span class="brand-logo">CAPSTAR<span class="brand-tag">®</span></span>
+            </div>
+            <div class="grid-cell text-right flex-center justify-end">
+                <div class="status-indicator">
+                    <span class="blinking-dot"></span>
+                    <span class="mono-meta text-accent">CONFIDENCIAL</span>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero-section border-bottom">
+            <div class="hero-grid">
+                <div class="hero-text border-right reveal fade-right">
+                    <h2 class="mono-meta subtitle tech-box">PROPUESTA MAYORISTA</h2>
+                    <h1 class="hero-title oswald-bold">SEGUNDA<br>COLECCIÓN</h1>
+                    <h1 class="hero-title-serif">Drop 002</h1>
+                    
+                    <div class="tech-details mono-meta mt-4 opacity-50">
+                        COORD: 04°36'N 74°04'W <br>
+                        MATERIAL: RAW CANVAS // CONCRETE
+                    </div>
+                </div>
+                <div class="hero-image reveal fade-left">
+                    <div class="image-container">
+                        <img src="assets/ticket.jpg" alt="Capstar Ticket" />
+                        <div class="crosshair center"></div>
+                    </div>
+                    <div class="image-label mono-meta border-top flex-between">
+                        <span>DOC_REF: TICKET_001</span>
+                        <span>[ SCANNED ASSET ]</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">01 / LA MARCA</span>
+            </div>
+            <div class="split-grid">
+                <div class="split-left border-right padding-box">
+                    <h2 class="section-title oswald-bold reveal fade-right">¿QUÉ ES CAPSTAR?</h2>
+                    <div class="tech-line mt-2 mb-4"></div>
+                    <p class="body-text">
+                        Capstar es una marca colombiana de gorras premium que nace desde la intersección entre moda, diseño y cultura urbana. Desarrollamos piezas con una identidad visual fuerte, acabados de alta calidad y una filosofía de lanzamientos limitados.
+                    </p>
+                    <p class="body-text mt-4">
+                        Cada colección está pensada para que la gorra no sea solamente un accesorio, sino una pieza de identidad que pueda convivir con una selección de moda premium.
+                    </p>
+                </div>
+                <div class="split-right">
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left">
+                        <div class="list-num mono-meta">01</div>
+                        <div class="list-content">
+                            <h3 class="item-title oswald-bold">DISEÑO</h3>
+                            <p class="item-desc">Diseños originales desarrollados alrededor de un concepto de colección.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left" style="transition-delay: 0.1s">
+                        <div class="list-num mono-meta">02</div>
+                        <div class="list-content">
+                            <h3 class="item-title oswald-bold">CALIDAD</h3>
+                            <p class="item-desc">Construcción, materiales premium y bordados de alta calidad.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left" style="transition-delay: 0.2s">
+                        <div class="list-num mono-meta">03</div>
+                        <div class="list-content">
+                            <h3 class="item-title oswald-bold">EDICIONES LIMITADAS</h3>
+                            <p class="item-desc">Producciones controladas para conservar exclusividad.</p>
+                        </div>
+                    </div>
+                    <div class="list-row padding-box hover-inv reveal fade-left" style="transition-delay: 0.3s">
+                        <div class="list-num mono-meta">04</div>
+                        <div class="list-content">
+                            <h3 class="item-title oswald-bold">IDENTIDAD</h3>
+                            <p class="item-desc">Una propuesta reconocible dentro del universo streetwear premium.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">02 / PROPUESTA DE VALOR</span>
+            </div>
+            <div class="split-grid reverse-mobile">
+                <div class="split-left border-right">
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-right">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">PRODUCTO DIFERENCIADO</h3>
+                            <p class="item-desc">Una gorra con presencia visual y detalles que generan interés en exhibición.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-right">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">TICKET PREMIUM</h3>
+                            <p class="item-desc">Un producto de alto valor percibido que puede integrarse a una selección premium.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-right">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">MARGEN COMERCIAL</h3>
+                            <p class="item-desc">La estructura mayorista aumenta el margen del retailer a medida que crece el pedido.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-right">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">LANZAMIENTOS</h3>
+                            <p class="item-desc">Nuevos drops permiten renovar la propuesta y generar recompra.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-right">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">APOYO DE MARCA</h3>
+                            <p class="item-desc">Capstar acompaña al retailer con recursos visuales y contenido.</p>
+                        </div>
+                    </div>
+                    <div class="list-row padding-box hover-inv reveal fade-right">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">DISTRIBUCIÓN SELECTIVA</h3>
+                            <p class="item-desc">Buscamos trabajar con un número controlado de tiendas y cuidar la presencia de la marca.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-right padding-box bg-light pattern-bg flex-col-center">
+                    <h2 class="section-title oswald-bold text-center reveal fade-up">¿POR QUÉ TENER CAPSTAR EN TU TIENDA?</h2>
+                    <p class="body-text mt-4 text-center max-w reveal fade-up" style="transition-delay: 0.1s">
+                        Capstar está diseñada para complementar tiendas multimarca que buscan productos con una identidad clara, una presentación premium y una propuesta diferente a la oferta masiva.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">03 / DROP 002</span>
+            </div>
+            <div class="padding-box text-center border-bottom bg-accent pattern-bg text-dark flex-col-center">
+                <h2 class="hero-title-serif text-dark reveal scale-in">Legends are made in the offseason</h2>
+                <div class="tech-line dark mt-4 mb-4"></div>
+                <p class="body-text max-w center-text text-dark bold reveal fade-up">
+                    La segunda colección de Capstar explora una estética más sofisticada, con una paleta crema, chocolate y negro. El concepto combina tipografía gótica, estrellas y bordados tridimensionales para construir una pieza de fuerte carácter editorial.
+                </p>
+            </div>
+            <div class="image-grid">
+                <div class="grid-img border-right reveal fade-right">
+                    <div class="image-container has-crosshairs">
+                        <img src="assets/atelier.jpg" alt="Premium Atelier Hat" />
+                        <div class="crosshair tl"></div>
+                        <div class="crosshair tr"></div>
+                        <div class="crosshair bl"></div>
+                        <div class="crosshair br"></div>
+                    </div>
+                </div>
+                <div class="grid-img reveal fade-left">
+                    <div class="image-container has-crosshairs">
+                        <img src="assets/drp01.jpg" alt="Airport Security Hats" />
+                        <div class="crosshair tl"></div>
+                        <div class="crosshair tr"></div>
+                        <div class="crosshair bl"></div>
+                        <div class="crosshair br"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">04 / PRODUCTOS</span>
+            </div>
+            <div class="padding-box border-bottom flex-between">
+                <h2 class="section-title oswald-bold">DROP 002 · REFERENCIAS</h2>
+                <div class="barcode">|||| ||| | || ||||</div>
+            </div>
+            <div class="data-table">
+                <div class="table-row border-bottom hover-inv reveal fade-up">
+                    <div class="cell mono-meta border-right width-fixed opacity-50">REFERENCIA</div>
+                    <div class="cell oswald-bold border-right">CAPSTAR 002-01</div>
+                    <div class="cell mono-meta border-right width-fixed opacity-50">COLOR</div>
+                    <div class="cell body-text text-accent">CREMA / CHOCOLATE</div>
+                </div>
+                <div class="table-row border-bottom hover-inv reveal fade-up">
+                    <div class="cell mono-meta border-right width-fixed opacity-50">REFERENCIA</div>
+                    <div class="cell oswald-bold border-right">CAPSTAR 002-02</div>
+                    <div class="cell mono-meta border-right width-fixed opacity-50">COLOR</div>
+                    <div class="cell body-text text-accent">CREMA / NEGRO</div>
+                </div>
+            </div>
+            <div class="padding-box">
+                <p class="mono-meta opacity-70">Las referencias pueden combinarse dentro del pedido mínimo, sujeto a disponibilidad.</p>
+            </div>
+        </section>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">05 / PRECIOS MAYORISTAS</span>
+            </div>
+            <div class="padding-box border-bottom">
+                <h2 class="section-title oswald-bold">A MAYOR VOLUMEN, MEJOR PRECIO</h2>
+                <p class="body-text mt-2 opacity-70">La siguiente estructura está planteada para incentivar pedidos de mayor volumen y mejorar progresivamente el costo por unidad.</p>
+            </div>
+            <div class="pricing-table">
+                <div class="table-header border-bottom bg-light">
+                    <div class="cell mono-meta border-right">PEDIDO</div>
+                    <div class="cell mono-meta border-right">PRECIO / UNIDAD</div>
+                    <div class="cell mono-meta border-right">PVP SUGERIDO</div>
+                    <div class="cell mono-meta">MARGEN BRUTO*</div>
+                </div>
+                <div class="table-row border-bottom hover-inv reveal fade-up">
+                    <div class="cell body-text border-right"><span class="mono-meta block">30 - 50 und</span></div>
+                    <div class="cell mono-meta border-right text-accent">$140.000 COP</div>
+                    <div class="cell mono-meta border-right">$195.000 COP</div>
+                    <div class="cell mono-meta tech-box">50%</div>
+                </div>
+                <div class="table-row border-bottom hover-inv reveal fade-up" style="transition-delay: 0.1s">
+                    <div class="cell body-text border-right"><span class="mono-meta block">51 - 100 und</span></div>
+                    <div class="cell mono-meta border-right text-accent">$132.700 COP</div>
+                    <div class="cell mono-meta border-right">$195.000 COP</div>
+                    <div class="cell mono-meta tech-box">53%</div>
+                </div>
+                <div class="table-row border-bottom hover-inv reveal fade-up" style="transition-delay: 0.2s">
+                    <div class="cell body-text border-right"><span class="mono-meta block">101 – 150 und</span></div>
+                    <div class="cell mono-meta border-right text-accent">$127.400 COP</div>
+                    <div class="cell mono-meta border-right">$195.000 COP</div>
+                    <div class="cell mono-meta tech-box">57%</div>
+                </div>
+                <div class="table-row border-bottom hover-inv reveal fade-up" style="transition-delay: 0.3s">
+                    <div class="cell body-text border-right"><span class="mono-meta block">151+ und</span></div>
+                    <div class="cell mono-meta border-right text-accent">$124.900 COP</div>
+                    <div class="cell mono-meta border-right">$195.000 COP</div>
+                    <div class="cell mono-meta tech-box">60%</div>
+                </div>
+            </div>
+            <div class="padding-box bg-accent border-bottom flex-between text-dark">
+                <div>
+                    <span class="mono-meta block text-dark opacity-70">PEDIDO MÍNIMO</span>
+                    <span class="oswald-bold text-xl block mt-1" style="font-size: clamp(1.2rem, 3vw, 2rem);">30 unidades surtidas en 1 o 2 referencias.</span>
+                </div>
+                <div class="icon-cube"></div>
+            </div>
+            <div class="padding-box">
+                <p class="mono-meta opacity-50 text-xs">
+                    *Margen bruto calculado sobre el precio público sugerido de $195.000 COP. Los precios y escalas son una propuesta comercial y pueden ajustarse según volumen, logística y condiciones acordadas.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">06 / CONDICIONES COMERCIALES</span>
+            </div>
+            <div class="padding-box border-bottom">
+                <h2 class="section-title oswald-bold">CONDICIONES DE PAGO Y PEDIDO</h2>
+            </div>
+            <div class="conditions-grid">
+                <div class="condition-box border-right border-bottom padding-box hover-inv reveal fade-up">
+                    <h3 class="mono-meta mb-2 text-accent">PEDIDO INICIAL</h3>
+                    <p class="body-text">Pedido mínimo de 30 unidades surtidas.</p>
+                </div>
+                <div class="condition-box border-bottom padding-box hover-inv reveal fade-up" style="transition-delay: 0.1s">
+                    <h3 class="mono-meta mb-2 text-accent">PAGO — PRIMER PEDIDO</h3>
+                    <p class="body-text">100% del pedido antes del despacho, salvo acuerdo.</p>
+                </div>
+                <div class="condition-box border-right border-bottom padding-box hover-inv reveal fade-up" style="transition-delay: 0.2s">
+                    <h3 class="mono-meta mb-2 text-accent">PAGOS — RECURRENTES</h3>
+                    <p class="body-text">Condiciones variables según historial y volumen.</p>
+                </div>
+                <div class="condition-box border-bottom padding-box hover-inv reveal fade-up" style="transition-delay: 0.3s">
+                    <h3 class="mono-meta mb-2 text-accent">DESPACHO</h3>
+                    <p class="body-text">Costo y modalidad se confirman según ciudad y volumen.</p>
+                </div>
+                <div class="condition-box border-right padding-box hover-inv reveal fade-up" style="transition-delay: 0.4s">
+                    <h3 class="mono-meta mb-2 text-accent">DISPONIBILIDAD</h3>
+                    <p class="body-text">Pedidos confirmados según cantidades del drop.</p>
+                </div>
+                <div class="condition-box padding-box hover-inv reveal fade-up" style="transition-delay: 0.5s">
+                    <h3 class="mono-meta mb-2 text-accent">REPOSICIÓN</h3>
+                    <p class="body-text">Sujetas a disponibilidad de cada referencia.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section border-bottom reveal fade-up">
+            <div class="section-header border-bottom">
+                <span class="mono-meta tech-pill">07 / EXPERIENCIA DEL RETAILER</span>
+            </div>
+            <div class="split-grid">
+                <div class="split-left border-right">
+                    <div class="padding-box border-bottom">
+                        <h2 class="section-title oswald-bold">NO SOLO ENTREGAMOS EL PRODUCTO</h2>
+                        <p class="body-text mt-4">Herramientas para presentar Capstar correctamente y convertir la incorporación de la marca en una experiencia.</p>
+                    </div>
+                    <div class="image-box" style="padding:0;">
+                        <div class="image-container has-crosshairs">
+                            <img src="assets/girl.jpg" alt="Capstar Editorial" style="filter: contrast(1.1) grayscale(0.2);" />
+                            <div class="crosshair tl"></div>
+                            <div class="crosshair br"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-right">
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">MATERIAL VISUAL</h3>
+                            <p class="item-desc">Fotografías y recursos para redes y canales digitales.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">FOTOGRAFÍAS DE PRODUCTO</h3>
+                            <p class="item-desc">Imágenes para catálogo, e-commerce y comunicación.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">CONTENIDO DE LANZAMIENTO</h3>
+                            <p class="item-desc">Piezas de apoyo para comunicar la llegada de un drop.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">PACKAGING CAPSTAR</h3>
+                            <p class="item-desc">Packaging de marca para una presentación coherente.</p>
+                        </div>
+                    </div>
+                    <div class="list-row border-bottom padding-box hover-inv reveal fade-left">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">TAGS</h3>
+                            <p class="item-desc">Etiquetas y elementos de identificación de producto.</p>
+                        </div>
+                    </div>
+                    <div class="list-row padding-box hover-inv reveal fade-left">
+                        <div class="list-content full-width">
+                            <h3 class="item-title oswald-bold">DISPLAY / MERCHANDISING</h3>
+                            <p class="item-desc">Material de exhibición sujeto al tipo y volumen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-section reveal fade-up">
+            <div class="padding-box text-center flex-col-center">
+                <div class="barcode mb-4" style="font-size: 3rem;">||| | ||| || |||</div>
+                <h1 class="brand-logo huge">CAPSTAR</h1>
+                <p class="mono-meta mt-4 opacity-50 border-top pt-4 w-full" style="padding-top: 1rem; width: 100%;">
+                    2026 © CAPSTAR SYNDICATE · DOSSIER MAYORISTAS · SECURE CONNECTION
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
