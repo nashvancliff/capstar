@@ -94,6 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
     pwdForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const password = pwdInput.value;
+        const now = new Date().getTime();
+
+        if (now < targetDate) {
+            pwdMsg.textContent = '> EL ATELIER AÚN ESTÁ CERRADO.';
+            return;
+        }
 
         // Validación estática de contraseña
         if (password === STORE_PASSWORD) {
