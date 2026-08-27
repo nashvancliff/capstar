@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetDate = new Date("2026-08-27T19:00:00-05:00").getTime(); 
 
     // CONTRASEÑA DE LA TIENDA: Cambia esto por la clave que tú quieras
-    const STORE_PASSWORD = 'Capstar1029';
+    const STORE_PASSWORD = 'Capstar01';
 
     // Elements
     const cdDays = document.getElementById('cd-days');
