@@ -106,7 +106,89 @@
         <div class="buy-box">
             <span class="mono-text label dark">PURCHASE_PROTOCOL</span>
             <h3 id="dynamic-price">$120.000</h3>
-            <button id="btn-avisarme">COMPRAR</button>
+            <div id='product-component-1787863035928'></div>
+            <script type="text/javascript">
+            /*<![CDATA[*/
+            (function () {
+              var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+              if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                  ShopifyBuyInit();
+                } else {
+                  loadScript();
+                }
+              } else {
+                loadScript();
+              }
+              function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+              }
+              function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                  domain: 'fatp2p-1u.myshopify.com',
+                  storefrontAccessToken: '29041f65e0d7e80d89f30a64900474a8',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                  ui.createComponent('product', {
+                    id: '10552613241016',
+                    node: document.getElementById('product-component-1787863035928'),
+                    moneyFormat: '%24%7B%7Bamount_with_comma_separator%7D%7D',
+                    options: {
+                      "product": {
+                        "styles": {
+                          "product": {
+                            "@media (min-width: 601px)": {
+                              "max-width": "100%",
+                              "margin-left": "0",
+                              "margin-bottom": "0"
+                            },
+                            "text-align": "left",
+                            "width": "100%"
+                          },
+                          "button": {
+                            "font-family": "Inter, sans-serif",
+                            "font-weight": "700",
+                            "font-size": "14px",
+                            "padding-top": "14px",
+                            "padding-bottom": "14px",
+                            "padding-left": "20px",
+                            "padding-right": "20px",
+                            "color": "#ffffff",
+                            ":hover": {
+                              "background-color": "#ffffff",
+                              "color": "#000000"
+                            },
+                            "background-color": "transparent",
+                            "border": "1px solid rgba(255,255,255,0.5)",
+                            ":focus": {
+                              "background-color": "transparent"
+                            },
+                            "border-radius": "0px",
+                            "letter-spacing": "1px",
+                            "width": "100%"
+                          }
+                        },
+                        "buttonDestination": "checkout",
+                        "contents": {
+                          "img": false,
+                          "title": false,
+                          "price": false
+                        },
+                        "text": {
+                          "button": "COMPRAR"
+                        }
+                      }
+                    }
+                  });
+                });
+              }
+            })();
+            /*]]>*/
+            </script>
         </div>
 
         <div class="log-box">
