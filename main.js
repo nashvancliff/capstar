@@ -20,30 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Auto popup after 4 seconds (only once per session)
-    if (modal && !sessionStorage.getItem('popupShown')) {
-        setTimeout(() => {
-            modal.classList.add('active');
-            formMsg.textContent = '';
-            emailInput.value = '';
-            sessionStorage.setItem('popupShown', 'true');
-        }, 4000);
-    }
-
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-    }
-
-    // Close if clicked outside content
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    }
+    // Popup Logic Removed
 
         if (emailForm) {
             emailForm.addEventListener('submit', (e) => {
