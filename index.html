@@ -167,58 +167,14 @@
     <h1 style="display: none; font-size: 52px; font-weight: 900; letter-spacing: -2px; margin: 0;">CAPST★R</h1>
 </div>
 
-<div class="countdown" id="countdown">
-    <div class="time-box">
-        <span class="num" id="cd-days">00</span>
-        <span class="label">DAYS</span>
-    </div>
-    <div class="time-box">
-        <span class="num" id="cd-hours">00</span>
-        <span class="label">HOURS</span>
-    </div>
-    <div class="time-box">
-        <span class="num" id="cd-mins">00</span>
-        <span class="label">MINS</span>
-    </div>
-    <div class="time-box">
-        <span class="num" id="cd-secs">00</span>
-        <span class="label">SECS</span>
-<div class="email-section" id="email-section">
-    <h3>ENTRA AL CLUB</h3>
-    <p>Acceso anticipado, drops exclusivos y sorpresas antes que todos.</p>
-    <form id="landing-email-form">
-        <div style="display: flex; gap: 5px; margin-bottom: 10px;">
-            <select id="landing-prefix" style="padding: 12px; border: 1px solid #000; font-family: var(--font-mono); outline: none; background: #fff;">
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+34">🇪🇸 +34</option>
-                <option value="+51">🇵🇪 +51</option>
-                <option value="+52">🇲🇽 +52</option>
-                <option value="+54">🇦🇷 +54</option>
-                <option value="+56">🇨🇱 +56</option>
-                <option value="+57" selected>🇨🇴 +57</option>
-                <option value="+58">🇻🇪 +58</option>
-            </select>
-            <input type="tel" id="landing-email" placeholder="Número de teléfono" required style="margin-bottom: 0; width: 100%;">
-        </div>
-        <button type="submit">COMPRAR</button>
+<div class="email-section" id="login-section" style="margin-top: 20px;">
+    <h3>SECURITY CLEARANCE</h3>
+    <p class="mono-text" style="font-size: 11px; margin-bottom: 20px; color: #666;">Enter passcode to access the store.</p>
+    <form id="pwd-form">
+        <input type="password" id="pwd-input" placeholder="PASSCODE" required style="width: 100%; padding: 12px; border: 1px solid #000; font-family: var(--font-mono); font-size: 12px; margin-bottom: 10px; outline: none; text-align: center;">
+        <button type="submit" style="width: 100%; padding: 14px; background: #000; color: #fff; border: 1px solid #000; font-family: var(--font-sans); font-weight: 700; cursor: pointer; text-transform: uppercase;">VERIFY</button>
     </form>
-    <div class="success-msg" id="landing-success-msg">Ya quedaste registrado. Prepárate.</div>
-</div>
-
-<button class="enter-atelier" id="btn-enter-atelier">ENTER ATELIER (STAFF ONLY)</button>
-
-<!-- Password Modal -->
-<div class="modal-overlay" id="password-modal">
-    <div class="modal-content">
-        <button class="close-btn" id="close-pwd-modal">&times;</button>
-        <h3 class="modal-title" style="font-size: 20px;">SECURITY CLEARANCE</h3>
-        <p class="mono-text desc" style="margin-bottom: 15px;">Enter passcode to access the store.</p>
-        <form id="pwd-form">
-            <input type="password" id="pwd-input" placeholder="PASSCODE" style="width:100%; padding:12px; margin-bottom:15px; font-family:var(--font-mono); border:1px solid #000;" required>
-            <button type="submit" class="modal-submit" style="width: 100%;">VERIFY</button>
-        </form>
-        <div id="pwd-msg" class="mono-text" style="color:red; margin-top:10px;"></div>
-    </div>
+    <div id="pwd-msg" class="mono-text" style="color:red; margin-top:15px; font-size: 11px;"></div>
 </div>
 
 <script src="landing.js"></script>
